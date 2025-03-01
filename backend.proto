@@ -1,0 +1,29 @@
+service Backend {
+    rpc getComparisonChart(ComparisonRequest) returns (JsonResponse) {}
+    rpc getNonComparisonChart(NonComparisonRequest) returns (JsonResponse) {}
+    rpc getPrediction(PredictionRequest) returns (JsonResponse) {}
+}
+
+message ComparisonRequest {
+    string coin = 1;
+    string type = 2;
+    string chart_parameter_1 = 3;
+    string chart_parameter_2 = 4;
+}
+
+message NonComparisonRequest {
+    string coin = 1;
+    string type = 2;
+    string chart_parameter_1 = 3;
+}
+
+message PredictionRequest {
+    string coing = 1;
+    string userPrediction = 2;
+    string prediction_parameter_1 = 3;
+    string prediction_parameter_2 = 4;
+}
+
+message JsonResponse {
+    string response = 1;
+}
